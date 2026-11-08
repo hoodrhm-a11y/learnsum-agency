@@ -19,6 +19,7 @@ def main():
         lines.append(f"❌ Could not reach the Page: {e}"); bad = True
     try:
         info = meta.get("debug_token", input_token=meta.TOKEN).get("data", {})
+        lines.append(f"✅ Using a {info.get('type', '?').lower()} token" + (" (fetched from your user key)" if meta.TOKEN != meta.USER_OR_PAGE_TOKEN else ""))
         exp = info.get("expires_at", 0)
         lines.append("✅ Token never expires" if not exp else f"⚠️ Token expires {dt.datetime.utcfromtimestamp(exp):%Y-%m-%d}")
         dax = info.get("data_access_expires_at")

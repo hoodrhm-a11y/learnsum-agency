@@ -1,6 +1,7 @@
 """Minimal Meta Graph API client for one Facebook Page + its linked Instagram account.
 
-Env: META_PAGE_ID, META_PAGE_TOKEN (long-lived Page access token), META_IG_USER_ID (optional),
+Env: META_PAGE_ID, META_PAGE_TOKEN (a long-lived Page token, or a long-lived USER token of a Page admin:
+     the Page token is then fetched from it automatically), META_IG_USER_ID (optional),
      META_API_VERSION (default v23.0)
 """
 import json, os, time
@@ -9,8 +10,25 @@ import requests
 V = os.environ.get("META_API_VERSION", "v27.0")
 G = f"https://graph.facebook.com/{V}"
 PAGE = os.environ.get("META_PAGE_ID", "")
-TOKEN = os.environ.get("META_PAGE_TOKEN", "")
+USER_OR_PAGE_TOKEN = os.environ.get("META_PAGE_TOKEN", "")
+TOKEN = USER_OR_PAGE_TOKEN
 IG = os.environ.get("META_IG_USER_ID", "")
+
+
+def _page_token():
+    """If META_PAGE_TOKEN is a user token, swap it for the Page's own token (Page tokens made from a
+    long-lived user token don't expire). If it already is the Page token, Meta returns it unchanged."""
+    if not (PAGE and USER_OR_PAGE_TOKEN):
+        return USER_OR_PAGE_TOKEN
+    try:
+        r = requests.get(f"https://graph.facebook.com/{os.environ.get('META_API_VERSION', 'v27.0')}/{PAGE}",
+                         params={"fields": "access_token", "access_token": USER_OR_PAGE_TOKEN}, timeout=60).json()
+        return r.get("access_token") or USER_OR_PAGE_TOKEN
+    except Exception:
+        return USER_OR_PAGE_TOKEN
+
+
+TOKEN = _page_token()
 
 
 class MetaError(RuntimeError):
