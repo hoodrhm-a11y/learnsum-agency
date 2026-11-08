@@ -1,0 +1,67 @@
+{
+ "id": "2026-11-18-homework-fight-small-stops",
+ "type": "reel",
+ "topic": "Make homework feel smaller tonight",
+ "publish_at": "2026-11-18T19:30:00-05:00",
+ "fact_ids": [
+  "ls_daily_path",
+  "ls_trial"
+ ],
+ "caption": "Homework fight again tonight? Try making it smaller. 🎒\n\nBig piles feel heavy. Short stops feel doable.\nSay the plan out loud, set a timer your child can see, and end with something to look forward to.\nIn LearnSum, each day is a path of 5 short stops that ends at a treasure chest.\n\nWhat helps your child get started on homework?\n\n#ParentingTips #HomeworkHelp #LearningThroughPlay #CanadianParents #ElementarySchool\n\nTry LearnSum free for 14 days at learnsum.ca",
+ "scenes": [
+  {
+   "kind": "hook",
+   "lines": [
+    "Homework fight",
+    "again tonight?",
+    "Make it smaller."
+   ],
+   "accent": 2,
+   "tag": "Try this tonight ↓"
+  },
+  {
+   "kind": "statement",
+   "lines": [
+    "Big homework",
+    "feels heavy.",
+    "Small stops",
+    "feel doable."
+   ],
+   "accent": [
+    2,
+    3
+   ],
+   "sub": "A clear start and a clear finish help kids get going."
+  },
+  {
+   "kind": "app",
+   "lines": [
+    "5 short stops",
+    "a day, then a",
+    "treasure chest"
+   ],
+   "accent": [
+    2
+   ],
+   "shot": "today",
+   "note": "Small steps, big smiles"
+  },
+  {
+   "kind": "tips",
+   "title": [
+    "Make homework",
+    "feel smaller"
+   ],
+   "items": [
+    "Say the plan: one thing, then a break",
+    "Use a timer your child can see",
+    "End with something to look forward to"
+   ]
+  },
+  {
+   "kind": "cta",
+   "save": "Save this for homework time",
+   "source": "Try LearnSum free for 14 days at learnsum.ca"
+  }
+ ]
+}

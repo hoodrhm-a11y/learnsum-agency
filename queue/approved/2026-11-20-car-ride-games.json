@@ -1,0 +1,51 @@
+{
+ "id": "2026-11-20-car-ride-games",
+ "type": "reel",
+ "topic": "Car ride games that beat boredom",
+ "publish_at": "2026-11-20T19:30:00-05:00",
+ "fact_ids": [
+  "ls_play_at_home"
+ ],
+ "caption": "\"Are we there yet?\" Try these instead. 🚗\n\nThree car games that need no screen, no paper and no prep. They work for little ones and big kids alike.\nGreat for errands, grandma's house and winter break drives.\n\nWhat's your go-to car game?\n\n#ParentingTips #LearningThroughPlay #CanadianParents #EarlyLearning #WinterBreak",
+ "scenes": [
+  {
+   "kind": "hook",
+   "lines": [
+    "\"Are we",
+    "there yet?\"",
+    "Try this."
+   ],
+   "accent": 1,
+   "tag": "Three car games, no materials  ↓"
+  },
+  {
+   "kind": "tips",
+   "title": [
+    "Car-ride",
+    "word games"
+   ],
+   "items": [
+    "Rhyme chain: cat, hat, bat... who runs out?",
+    "Spot it: find something that starts with B",
+    "Add the digits on the next licence plate"
+   ]
+  },
+  {
+   "kind": "statement",
+   "lines": [
+    "Let your child",
+    "make the",
+    "rules."
+   ],
+   "accent": [
+    1
+   ],
+   "sub": "Kids love being the game master. Take turns and the car gets happily busy."
+  },
+  {
+   "kind": "cta",
+   "save": "Save this for the next drive",
+   "source": "More off-screen games: Play at home in the LearnSum parent area"
+  }
+ ]
+}
