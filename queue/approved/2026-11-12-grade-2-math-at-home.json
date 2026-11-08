@@ -1,0 +1,75 @@
+{
+ "id": "2026-11-12-grade-2-math-at-home",
+ "type": "carousel",
+ "topic": "What grade 2 kids learn in math",
+ "publish_at": "2026-11-12T19:30:00-05:00",
+ "fact_ids": [
+  "ls_grades_subjects"
+ ],
+ "caption": "\"What are they even learning in grade 2 math?\" 🤔 Here's the big picture, and one easy way to help with each.\n\nWhich one does your child find trickiest?\n\n#Grade2 #MathAtHome #ParentingTips #LearningThroughPlay #CanadianParents",
+ "slides": [
+  {
+   "kind": "cover",
+   "chip": "For parents · Grade 2",
+   "title": [
+    "Grade 2 math",
+    "in plain",
+    "words"
+   ],
+   "accent": 0,
+   "sub": "and one easy way to help with each"
+  },
+  {
+   "kind": "points",
+   "kicker": "Numbers",
+   "title": "Bigger numbers, tens and ones",
+   "items": [
+    [
+     "Place value",
+     "Seeing a number as tens and ones makes adding much easier."
+    ],
+    [
+     "At home",
+     "Count coins or bundles of straws in tens, then the leftover ones."
+    ]
+   ]
+  },
+  {
+   "kind": "points",
+   "kicker": "Adding and taking away",
+   "title": "More ways than one",
+   "items": [
+    [
+     "Mental math",
+     "Kids learn to break numbers apart and jump on a number line."
+    ],
+    [
+     "At home",
+     "Ask \"how did you get that?\" Their way counts."
+    ]
+   ]
+  },
+  {
+   "kind": "points",
+   "kicker": "Everyday math",
+   "title": "Time, money and measuring",
+   "items": [
+    [
+     "Real life",
+     "Telling time, counting money and measuring length."
+    ],
+    [
+     "At home",
+     "Let them pay at the store or time how long a game takes."
+    ]
+   ]
+  },
+  {
+   "kind": "cta",
+   "save": "Save this · Share with a grade 2 parent",
+   "lines": [
+    "Every school and board teaches in its own order."
+   ]
+  }
+ ]
+}

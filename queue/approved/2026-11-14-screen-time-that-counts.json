@@ -1,0 +1,84 @@
+{
+ "id": "2026-11-14-screen-time-that-counts",
+ "type": "carousel",
+ "topic": "Balancing screens and active play",
+ "publish_at": "2026-11-14T19:30:00-05:00",
+ "fact_ids": [
+  "csep_screen_5_17",
+  "csep_activity_5_17"
+ ],
+ "caption": "Not all screen time is the same. 📱⚽ Canada's guidelines give a simple daily balance for kids aged 5 to 17.\n\nWhat's your family's best off-screen activity?\n\n#ScreenTime #HealthyKids #ParentingTips #CanadianParents #ActiveKids",
+ "slides": [
+  {
+   "kind": "cover",
+   "chip": "Canadian guidelines · ages 5 to 17",
+   "title": [
+    "A simple",
+    "daily balance"
+   ],
+   "accent": 1,
+   "sub": "for screens and active play"
+  },
+  {
+   "kind": "points",
+   "kicker": "Move",
+   "title": "At least 60 minutes of active play",
+   "mark": 60,
+   "items": [
+    [
+     "Moderate to vigorous",
+     "Huffing and puffing counts: tag, biking, dancing, sledding."
+    ],
+    [
+     "",
+     "It can add up through the day."
+    ]
+   ]
+  },
+  {
+   "kind": "points",
+   "kicker": "Screens",
+   "title": "No more than 2 hours of fun screen time",
+   "mark": 2,
+   "items": [
+    [
+     "Recreational screens",
+     "Shows, games and scrolling for fun."
+    ],
+    [
+     "",
+     "Schoolwork and learning are separate from this limit."
+    ]
+   ],
+   "example": "Example: a show after school and a family movie on Friday, plus lots of outside play."
+  },
+  {
+   "kind": "compare",
+   "kicker": "Make it easier",
+   "title": "Small swaps that help",
+   "left": {
+    "name": "Instead of",
+    "points": [
+     "Screens at the table",
+     "Phone at bedtime",
+     "Endless autoplay"
+    ]
+   },
+   "right": {
+    "name": "Try",
+    "points": [
+     "Talk about your day",
+     "Charge it outside the room",
+     "Pick one show, then stop"
+    ]
+   }
+  },
+  {
+   "kind": "cta",
+   "save": "Save this · Send to a parent",
+   "lines": [
+    "Source: Canadian 24-Hour Movement Guidelines (CSEP)."
+   ]
+  }
+ ]
+}
