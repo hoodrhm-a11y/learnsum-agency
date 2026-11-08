@@ -27,9 +27,14 @@ jobs:
     steps:
       - name: Ready?
         id: ready
-        env: { K: "${{ secrets.ANTHROPIC_API_KEY }}" }
+        env:
+          K: ${{ secrets.ANTHROPIC_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
         run: |
-          if [ -n "$K" ]; then echo "go=1" >> "$GITHUB_OUTPUT"; else echo "Claude API key not added yet; skipping this week."; echo "go=0" >> "$GITHUB_OUTPUT"; fi
+          if [ -z "$K" ]; then echo "Claude API key not added yet; skipping this week."; echo "go=0" >> "$GITHUB_OUTPUT"; exit 0; fi
+          OPEN=$(gh api "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=50" -q '[.[]|select(.head.ref|startswith("week-"))]|length')
+          if [ "${OPEN:-0}" != "0" ]; then echo "A week is already waiting for approval; not planning another."; echo "go=0" >> "$GITHUB_OUTPUT"; exit 0; fi
+          echo "go=1" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
         if: steps.ready.outputs.go == '1'
       - uses: actions/setup-python@v5
