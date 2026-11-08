@@ -33,12 +33,14 @@ def main():
             else:
                 lines.append(f"✅ Data access good until {when:%b %d, %Y} ({days} days)")
         scopes = set(info.get("scopes", []))
-        need = {"pages_manage_posts", "pages_manage_engagement", "pages_read_engagement", "pages_read_user_content"}
+        need = {"pages_manage_posts", "pages_manage_engagement", "pages_read_engagement"}
         missing = need - scopes
         if missing:
             bad = True; lines.append(f"❌ Missing permissions: {', '.join(sorted(missing))}")
         else:
             lines.append("✅ Posting and comment permissions present")
+        if "pages_read_user_content" not in scopes:
+            lines.append("ℹ️ pages_read_user_content isn't granted (Meta doesn't offer it to this app); comment reading uses pages_read_engagement.")
     except meta.MetaError as e:
         lines.append(f"⚠️ Could not inspect the token: {e}")
     os.makedirs("state", exist_ok=True)
