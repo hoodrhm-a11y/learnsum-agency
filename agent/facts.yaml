@@ -1,0 +1,119 @@
+# VERIFIED FACTS: the planner may ONLY use numbers that appear here.
+# Add a fact only after checking it against the source. Update "checked" when you re-verify.
+# Any post containing a number not found below is rejected automatically.
+# Small counting numbers 0-10 and the years 2024-2028 are always allowed.
+
+# ---------- LearnSum (our own product facts; source: learnsum.ca, keep in step with the website) ----------
+- id: ls_trial
+  text: "Every new LearnSum family gets a 14-day free trial with full access. No credit card is needed for the trial."
+  numbers: ["14"]
+  source: "learnsum.ca pricing"
+  url: "https://learnsum.ca/#pricing"
+  checked: "2026-11-08"
+
+- id: ls_price
+  text: "After the trial, LearnSum costs $2.99 CAD a month per child. Families can cancel any time."
+  numbers: ["$2.99"]
+  source: "learnsum.ca pricing"
+  url: "https://learnsum.ca/#pricing"
+  checked: "2026-11-08"
+
+- id: ls_grades_subjects
+  text: "LearnSum covers Kindergarten to grade 8 in 6 subjects: math, reading, language, writing, listening and safety."
+  numbers: ["8", "6"]
+  source: "learnsum.ca"
+  url: "https://learnsum.ca/"
+  checked: "2026-11-08"
+
+- id: ls_skills
+  text: "LearnSum has more than 800 skills from Kindergarten to grade 8, with new questions every time."
+  numbers: ["800"]
+  source: "learnsum.ca"
+  url: "https://learnsum.ca/"
+  checked: "2026-11-08"
+
+- id: ls_games
+  text: "LearnSum has more than 30 learning games and hands-on labs (number line, fractions, balance scale, clock, money and more)."
+  numbers: ["30"]
+  source: "learnsum.ca"
+  url: "https://learnsum.ca/"
+  checked: "2026-11-08"
+
+- id: ls_safety
+  text: "LearnSum has no ads and no chat. Kids can't message anyone and never need an email address. Parents create the account."
+  numbers: []
+  source: "learnsum.ca privacy"
+  url: "https://learnsum.ca/privacy"
+  checked: "2026-11-08"
+
+- id: ls_daily_path
+  text: "Each day LearnSum gives a child a path of 5 short stops: math, reading, language, a game and a challenge, ending at a treasure chest."
+  numbers: ["5"]
+  source: "LearnSum app"
+  url: "https://learnsum.ca/"
+  checked: "2026-11-08"
+
+- id: ls_mastery
+  text: "Every LearnSum skill has a mastery score from 0 to 100, and mistakes come back for practice until they stick."
+  numbers: ["0", "100"]
+  source: "learnsum.ca"
+  url: "https://learnsum.ca/"
+  checked: "2026-11-08"
+
+- id: ls_devices
+  text: "LearnSum works on iPhone and iPad (App Store) and in any web browser on a computer, tablet or phone."
+  numbers: []
+  source: "learnsum.ca"
+  url: "https://apps.apple.com/app/id6829399296"
+  checked: "2026-11-08"
+
+- id: ls_play_at_home
+  text: "LearnSum's parent area includes Play at home: printable off-screen learning games such as Simon Says Math, a letter sound scavenger hunt and dice addition."
+  numbers: []
+  source: "LearnSum parent area"
+  url: "https://learnsum.ca/"
+  checked: "2026-11-08"
+
+# ---------- Child health and learning (official Canadian sources) ----------
+- id: csep_sleep_5_13
+  text: "Canadian 24-Hour Movement Guidelines: children aged 5 to 13 need 9 to 11 hours of uninterrupted sleep per night, with consistent bed and wake-up times."
+  numbers: ["5", "13", "9", "11"]
+  source: "Canadian 24-Hour Movement Guidelines for Children and Youth (CSEP)"
+  url: "https://csepguidelines.ca/guidelines/children-youth/"
+  checked: "2026-11-08"
+
+- id: csep_activity_5_17
+  text: "Canadian 24-Hour Movement Guidelines: children and youth aged 5 to 17 should get at least 60 minutes a day of moderate to vigorous physical activity."
+  numbers: ["5", "17", "60"]
+  source: "Canadian 24-Hour Movement Guidelines for Children and Youth (CSEP)"
+  url: "https://csepguidelines.ca/guidelines/children-youth/"
+  checked: "2026-11-08"
+
+- id: csep_screen_5_17
+  text: "Canadian 24-Hour Movement Guidelines: children and youth aged 5 to 17 should have no more than 2 hours a day of recreational screen time."
+  numbers: ["5", "17", "2"]
+  source: "Canadian 24-Hour Movement Guidelines for Children and Youth (CSEP)"
+  url: "https://csepguidelines.ca/guidelines/children-youth/"
+  checked: "2026-11-08"
+
+- id: csep_sleep_14_17
+  text: "Canadian 24-Hour Movement Guidelines: teens aged 14 to 17 need 8 to 10 hours of sleep per night."
+  numbers: ["14", "17", "8", "10"]
+  source: "Canadian 24-Hour Movement Guidelines for Children and Youth (CSEP)"
+  url: "https://csepguidelines.ca/guidelines/children-youth/"
+  checked: "2026-11-08"
+
+# ---------- School calendar (Ontario; always tell parents to check their own board) ----------
+- id: on_march_break_2027
+  text: "In Ontario, March Break 2027 is March 15 to 19 for almost all school boards (check your own board's calendar)."
+  numbers: ["15", "19", "2027"]
+  source: "calendar-canada.ca and USCA Academy (school board calendars)"
+  url: "https://www.calendar-canada.ca/school-calendars/march-break-2027/"
+  checked: "2026-11-08"
+
+- id: on_progress_reports
+  text: "Ontario elementary schools send home fall progress reports in the fall, usually in November, often followed by parent-teacher interviews. Exact dates are set by each school board."
+  numbers: []
+  source: "Ontario school boards (e.g. YCDSB, UGDSB school notices)"
+  url: "https://smo.ycdsb.ca/2025/11/12/parent-teacher-interview-nov-20th-21st/"
+  checked: "2026-11-08"

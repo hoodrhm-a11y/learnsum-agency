@@ -1,0 +1,75 @@
+name: Weekly content (plan + approval PR)
+
+on:
+  schedule:
+    - cron: "29 13 * * 0"   # Sundays ~8-9 am Toronto
+  workflow_dispatch:
+    inputs:
+      start_date:
+        description: "First day of the week to plan (YYYY-MM-DD). Blank = next Monday."
+        required: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency: { group: weekly-content, cancel-in-progress: false }
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+      META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+      META_IG_USER_ID: ${{ secrets.META_IG_USER_ID }}
+    steps:
+      - name: Ready?
+        id: ready
+        env: { K: "${{ secrets.ANTHROPIC_API_KEY }}" }
+        run: |
+          if [ -n "$K" ]; then echo "go=1" >> "$GITHUB_OUTPUT"; else echo "Claude API key not added yet; skipping this week."; echo "go=0" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/checkout@v4
+        if: steps.ready.outputs.go == '1'
+      - uses: actions/setup-python@v5
+        if: steps.ready.outputs.go == '1'
+        with: { python-version: "3.12", cache: pip }
+      - run: pip install -r requirements.txt
+        if: steps.ready.outputs.go == '1'
+
+      - name: Performance report (last 28 days)
+        if: steps.ready.outputs.go == '1' && env.META_PAGE_TOKEN != ''
+        continue-on-error: true
+        run: python -m agent.report
+
+      - name: Plan next week with Claude
+        if: steps.ready.outputs.go == '1'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'claude-sonnet-5-5' }}
+          START_DATE: ${{ github.event.inputs.start_date }}
+        run: python -m agent.plan_week
+
+      - name: Open approval pull request
+        if: steps.ready.outputs.go == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          BR="week-$(date -u +%Y%m%d-%H%M)"
+          git config user.name "learnsum-bot"; git config user.email "actions@users.noreply.github.com"
+          git checkout -b "$BR"
+          mkdir -p queue/approved
+          mv queue/pending/*.json queue/approved/
+          python -m agent.pr_body "$GITHUB_REPOSITORY" "$BR" queue/approved > /tmp/body.md
+          git add queue previews state
+          git commit -m "Content for the week ($BR)"
+          git push origin "$BR"
+          gh pr create --title "Approve next week's LearnSum posts" --body-file /tmp/body.md --base main --head "$BR"
+
+      - name: Post weekly report as an issue
+        if: steps.ready.outputs.go == '1' && hashFiles('state/report.md') != ''
+        continue-on-error: true
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: gh issue create --title "Weekly report $(date -u +%Y-%m-%d)" --body-file state/report.md

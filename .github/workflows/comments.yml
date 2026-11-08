@@ -1,0 +1,54 @@
+name: Comment assistant
+
+on:
+  schedule:
+    - cron: "37 12-23/3 * * *"  # light: every 3 hours, roughly 7-8 am to 7-8 pm Toronto
+    - cron: "37 2 * * *"         # plus one late-evening check
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency: { group: comments, cancel-in-progress: true }
+
+jobs:
+  comments:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Any recent posts?
+        id: any
+        run: |
+          if ls queue/posted/*.json >/dev/null 2>&1; then echo "go=1" >> "$GITHUB_OUTPUT"; else echo "go=0" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/setup-python@v5
+        if: steps.any.outputs.go == '1'
+        with: { python-version: "3.12" }
+      - if: steps.any.outputs.go == '1'
+        run: pip install -q requests pyyaml
+      - name: Handle comments
+        if: steps.any.outputs.go == '1'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'claude-sonnet-5-5' }}
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          META_IG_USER_ID: ${{ secrets.META_IG_USER_ID }}
+        run: python -m comments.assistant
+      - name: Send flagged comments to you
+        if: steps.any.outputs.go == '1'
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          [ -s state/flagged.md ] || exit 0
+          N=$(gh issue list --state open --search "Comments that need you in:title" --json number -q '.[0].number')
+          if [ -n "$N" ]; then gh issue comment "$N" --body-file state/flagged.md
+          else gh issue create --title "💬 Comments that need you" --body-file state/flagged.md; fi
+      - name: Save state
+        if: steps.any.outputs.go == '1'
+        run: |
+          git config user.name "learnsum-bot"; git config user.email "actions@users.noreply.github.com"
+          git add state/comments.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Comment assistant run"
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done

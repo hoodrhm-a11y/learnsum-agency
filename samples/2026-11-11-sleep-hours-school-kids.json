@@ -1,0 +1,51 @@
+{
+ "id": "2026-11-11-sleep-hours-school-kids",
+ "type": "reel",
+ "topic": "How much sleep school-age kids need",
+ "publish_at": "2026-11-11T19:30:00-05:00",
+ "fact_ids": [
+  "csep_sleep_5_13"
+ ],
+ "caption": "Bedtime battles again? 😴 Canada's guidelines say kids aged 5 to 13 need 9 to 11 hours of sleep a night, and the same bedtime and wake-up time helps most.\n\nWhat time is lights-out at your house?\n\n#ParentingTips #KidsSleep #BedtimeRoutine #CanadianParents #HealthyKids",
+ "scenes": [
+  {
+   "kind": "hook",
+   "lines": [
+    "Bedtime",
+    "battles",
+    "again?"
+   ],
+   "accent": 1,
+   "tag": "Here's the target  ↓"
+  },
+  {
+   "kind": "statement",
+   "lines": [
+    "9 to 11 hours",
+    "of sleep a night",
+    "for ages 5 to 13"
+   ],
+   "accent": [
+    0
+   ],
+   "sub": "Canada's guidelines also say: same bedtime and wake-up time, every day."
+  },
+  {
+   "kind": "tips",
+   "title": [
+    "Make bedtime",
+    "easier"
+   ],
+   "items": [
+    "Same lights-out time, even on weekends",
+    "Screens off and charging outside the room",
+    "A short story and one good-day question"
+   ]
+  },
+  {
+   "kind": "cta",
+   "save": "Save this · Send to a tired parent",
+   "source": "Source: Canadian 24-Hour Movement Guidelines (CSEP)"
+  }
+ ]
+}

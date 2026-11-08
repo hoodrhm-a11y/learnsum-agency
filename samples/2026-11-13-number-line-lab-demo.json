@@ -1,0 +1,50 @@
+{
+ "id": "2026-11-13-number-line-lab-demo",
+ "type": "reel",
+ "topic": "Number Line Lab makes adding click",
+ "publish_at": "2026-11-13T19:30:00-05:00",
+ "fact_ids": [
+  "ls_games",
+  "ls_trial"
+ ],
+ "caption": "Adding finally clicks when kids can SEE it. 🐸 In LearnSum's Number Line Lab, they hop the frog to the answer and watch the jumps add up.\n\nIt's one of 30+ games and hands-on labs for K to 8.\n\nTry LearnSum free for 14 days at learnsum.ca\n\n#MathAtHome #LearningThroughPlay #Grade1 #EarlyLearning #CanadianParents",
+ "scenes": [
+  {
+   "kind": "hook",
+   "lines": [
+    "Adding just",
+    "won't click?",
+    "Show it."
+   ],
+   "accent": 1,
+   "tag": "Watch this  ↓"
+  },
+  {
+   "kind": "app",
+   "lines": [
+    "Hop the frog",
+    "to the answer"
+   ],
+   "accent": [
+    1
+   ],
+   "shot": "numline",
+   "note": "Number Line Lab"
+  },
+  {
+   "kind": "stat",
+   "chip": "Inside LearnSum",
+   "value": 30,
+   "suffix": "+",
+   "lines": [
+    "learning games and",
+    "hands-on labs, K to 8"
+   ]
+  },
+  {
+   "kind": "cta",
+   "save": "Try it free for 14 days",
+   "source": "No credit card needed for the trial"
+  }
+ ]
+}

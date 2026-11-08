@@ -1,0 +1,50 @@
+{
+ "id": "2026-11-15-better-than-how-was-school",
+ "type": "reel",
+ "topic": "Better questions than how was school",
+ "publish_at": "2026-11-15T19:30:00-05:00",
+ "fact_ids": [
+  "ls_daily_path"
+ ],
+ "caption": "\"How was school?\" \"Fine.\" 😅 Try one of these instead and watch the stories come out.\n\nWhat question gets YOUR kids talking?\n\n#ParentingTips #ElementarySchool #TalkingWithKids #CanadianParents #FamilyTime",
+ "scenes": [
+  {
+   "kind": "hook",
+   "lines": [
+    "\"How was school?\"",
+    "\"Fine.\"",
+    "Sound familiar?"
+   ],
+   "accent": 1,
+   "tag": "Try these instead  ↓"
+  },
+  {
+   "kind": "tips",
+   "title": [
+    "Ask this",
+    "instead"
+   ],
+   "items": [
+    "What made you laugh today?",
+    "What was the hardest part of today?",
+    "Who did you sit with at lunch?"
+   ]
+  },
+  {
+   "kind": "statement",
+   "lines": [
+    "Specific questions",
+    "get real answers."
+   ],
+   "accent": [
+    1
+   ],
+   "sub": "Ask at dinner or in the car, when it feels like a chat, not a test."
+  },
+  {
+   "kind": "cta",
+   "save": "Save this for pickup time",
+   "source": "From LearnSum: learning that feels like play"
+  }
+ ]
+}

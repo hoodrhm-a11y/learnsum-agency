@@ -1,0 +1,80 @@
+{
+ "id": "2026-11-10-progress-report-questions",
+ "type": "carousel",
+ "topic": "Five questions to ask at parent-teacher interviews",
+ "publish_at": "2026-11-10T19:30:00-05:00",
+ "fact_ids": [
+  "on_progress_reports"
+ ],
+ "caption": "Progress reports are coming home. 📋 Here are 5 calm questions that turn a 10-minute interview into a real plan.\n\nWhich question do you always forget to ask?\n\n#ParentTeacherInterview #ParentingTips #ElementarySchool #CanadianParents #OntarioEducation",
+ "slides": [
+  {
+   "kind": "cover",
+   "chip": "Progress report season",
+   "title": [
+    "5 questions",
+    "to ask",
+    "the teacher"
+   ],
+   "accent": 1,
+   "sub": "Turn a short interview into a real plan"
+  },
+  {
+   "kind": "points",
+   "kicker": "Question 1 & 2",
+   "title": "Start with what's going well",
+   "mark": 1,
+   "items": [
+    [
+     "What does my child enjoy most?",
+     "Strengths are the best place to build from."
+    ],
+    [
+     "Who do they work well with?",
+     "It tells you how they learn best."
+    ]
+   ],
+   "example": "Example: \"Maya lights up during read-aloud.\" Now you know to read together at home too."
+  },
+  {
+   "kind": "points",
+   "kicker": "Question 3 & 4",
+   "title": "Then ask about the next step",
+   "mark": 3,
+   "items": [
+    [
+     "What is one skill to practise?",
+     "One clear goal beats a long list."
+    ],
+    [
+     "How can I help at home?",
+     "Ask for something small you can do in a few minutes."
+    ]
+   ],
+   "example": "Example: \"Practise adding on a number line.\" That's one game a night, not a worksheet war."
+  },
+  {
+   "kind": "points",
+   "kicker": "Question 5",
+   "title": "Close the loop",
+   "mark": 5,
+   "items": [
+    [
+     "When can we check in again?",
+     "Agree on a quick email or note in a few weeks."
+    ],
+    [
+     "",
+     "Then tell your child one thing the teacher said they do well."
+    ]
+   ]
+  },
+  {
+   "kind": "cta",
+   "save": "Save this · Send it to a parent",
+   "lines": [
+    "Report and interview dates are set by each school board."
+   ]
+  }
+ ]
+}

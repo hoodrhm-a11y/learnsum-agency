@@ -1,0 +1,43 @@
+name: Connection check
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/connection-check.yml", "publish/**"]
+  schedule:
+    - cron: "41 14 * * 1"   # Mondays ~9-10 am Toronto
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    # Skips quietly until the LearnSum Page is connected (META_PAGE_TOKEN secret added).
+    env:
+      HAS_TOKEN: ${{ secrets.META_PAGE_TOKEN != '' }}
+    steps:
+      - if: env.HAS_TOKEN != 'true'
+        run: echo "Facebook Page not connected yet; nothing to check."
+      - uses: actions/checkout@v4
+        if: env.HAS_TOKEN == 'true'
+      - uses: actions/setup-python@v5
+        if: env.HAS_TOKEN == 'true'
+        with: { python-version: "3.12" }
+      - run: pip install -q requests
+        if: env.HAS_TOKEN == 'true'
+      - name: Check Facebook connection
+        if: env.HAS_TOKEN == 'true'
+        env:
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+        run: python -m publish.check
+      - name: Alert
+        if: failure() && env.HAS_TOKEN == 'true'
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          mkdir -p state; [ -f state/check.md ] || echo "Connection check failed — see $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" > state/check.md
+          gh issue create --title "⚠️ Facebook connection needs attention" --body-file state/check.md

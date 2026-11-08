@@ -1,0 +1,68 @@
+name: Publish due posts
+
+on:
+  schedule:
+    # One post a day at 7:30 pm Toronto. Two times to cover EST (UTC-5) and EDT (UTC-4).
+    - cron: "23 23 * * *"
+    - cron: "23 0 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Render only, don't post (1 = yes)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency: { group: publish, cancel-in-progress: false }
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+
+      - name: Anything due?
+        id: due
+        run: |
+          if python -m publish.publish_due --check; then echo "go=1" >> "$GITHUB_OUTPUT"; else echo "go=0" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Install
+        if: steps.due.outputs.go == '1'
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -q -r requirements.txt
+
+      - name: Render and post
+        if: steps.due.outputs.go == '1'
+        env:
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          META_IG_USER_ID: ${{ secrets.META_IG_USER_ID }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          R2_PUBLIC_BASE: ${{ secrets.R2_PUBLIC_BASE }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: python -m publish.publish_due
+
+      - name: Save results
+        if: always() && steps.due.outputs.go == '1'
+        run: |
+          git config user.name "learnsum-bot"; git config user.email "actions@users.noreply.github.com"
+          git add queue
+          git diff --cached --quiet && exit 0
+          git commit -m "Published posts $(date -u +%F\ %H:%M)"
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done
+
+      - name: Alert on failure
+        if: failure()
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          gh issue create --title "⚠️ A post failed to publish" --body "See the run at $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID. The post stays queued and retries at the next scheduled run."

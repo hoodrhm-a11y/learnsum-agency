@@ -1,0 +1,51 @@
+{
+ "id": "2026-11-09-dinner-counting-games",
+ "type": "reel",
+ "topic": "Counting games while you cook dinner",
+ "publish_at": "2026-11-09T19:30:00-05:00",
+ "fact_ids": [
+  "ls_play_at_home"
+ ],
+ "caption": "No time for math practice? You already have the kitchen. 🍝\n\nThree tiny counting games for kids 4 to 7 that fit into making dinner, no worksheets needed.\n\nWhat's your little one's favourite job in the kitchen?\n\n#ParentingTips #LearningThroughPlay #Kindergarten #EarlyLearning #CanadianParents",
+ "scenes": [
+  {
+   "kind": "hook",
+   "lines": [
+    "No time for",
+    "math practice?",
+    "Try dinner."
+   ],
+   "accent": 1,
+   "tag": "3 games in 5 minutes  ↓"
+  },
+  {
+   "kind": "tips",
+   "title": [
+    "Counting games",
+    "while you cook"
+   ],
+   "items": [
+    "Count the carrots as they go in the pot",
+    "Set the table: one fork for each person",
+    "Guess, then count: how many noodles?"
+   ]
+  },
+  {
+   "kind": "statement",
+   "lines": [
+    "Small, every day",
+    "beats long,",
+    "once a week."
+   ],
+   "accent": [
+    2
+   ],
+   "sub": "Five happy minutes builds the habit, and the confidence."
+  },
+  {
+   "kind": "cta",
+   "save": "Save this for dinner tonight",
+   "source": "More games: Play at home in the LearnSum parent area"
+  }
+ ]
+}
