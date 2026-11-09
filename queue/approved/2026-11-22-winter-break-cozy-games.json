@@ -1,19 +1,19 @@
 {
  "id": "2026-11-22-winter-break-cozy-games",
  "type": "reel",
- "topic": "Cozy winter break games, no prep",
+ "topic": "Cozy indoor games for cold weekends, no prep",
  "publish_at": "2026-11-22T19:30:00-05:00",
  "fact_ids": [
   "ls_play_at_home"
  ],
- "caption": "Winter break and already hearing \"I'm bored\"? ❄️\n\nHere are 3 cozy games that use things you already have at home.\nNo prep, no worksheets, and they work for little kids and bigger kids.\nSave this for the first rainy or snowy day off.\n\nWhat's your family's favourite cozy winter break activity?\n\n#ParentingTips #LearningThroughPlay #WinterBreak #EarlyLearning #CanadianParents",
+ "caption": "Cold weekend and already hearing \"I'm bored\"? ❄️\n\nHere are 3 cozy games that use things you already have at home.\nNo prep, no worksheets, and they work for little kids and bigger kids.\nSave this for the next snow day.\n\nWhat's your family's favourite cozy indoor activity?\n\n#ParentingTips #LearningThroughPlay #SnowDay #EarlyLearning #CanadianParents",
  "scenes": [
   {
    "kind": "hook",
    "lines": [
-    "Winter break:",
+    "Cold weekend:",
     "\"I'm bored\"",
-    "by day two?"
+    "by lunch?"
    ],
    "accent": 1,
    "tag": "3 cozy games  ↓"
@@ -44,7 +44,7 @@
   },
   {
    "kind": "cta",
-   "save": "Save this for winter break",
+   "save": "Save this for the next snow day",
    "source": "More games: Play at home in the LearnSum parent area"
   }
  ]
