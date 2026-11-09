@@ -1,0 +1,50 @@
+{
+ "id": "2026-11-16-bedtime-story-questions",
+ "type": "reel",
+ "topic": "Bedtime story questions that get kids talking",
+ "publish_at": "2026-11-16T19:30:00-05:00",
+ "fact_ids": [
+  "ls_play_at_home"
+ ],
+ "caption": "Same bedtime story again? Turn it into a tiny talk. 📖\n\nAsk a few easy questions as you read: who, where, what happened.\nNo quiz, no pressure. Just curious.\nLittle readers love to be the expert on their favourite book.\n\nWhat's the book your child asks for again and again?\n\n#ParentingTips #LearningThroughPlay #Kindergarten #EarlyLearning #CanadianParents",
+ "scenes": [
+  {
+   "kind": "hook",
+   "lines": [
+    "Same bedtime",
+    "story again?",
+    "Try this."
+   ],
+   "accent": 2,
+   "tag": "Questions that get them talking ↓"
+  },
+  {
+   "kind": "tips",
+   "title": [
+    "Story questions",
+    "for bedtime"
+   ],
+   "items": [
+    "Who was in the story?",
+    "Where did it happen?",
+    "What happened first? Then what?"
+   ]
+  },
+  {
+   "kind": "statement",
+   "lines": [
+    "Not a quiz.",
+    "Just curious."
+   ],
+   "accent": [
+    1
+   ],
+   "sub": "Let them answer in their own words. Then swap: you answer, they ask."
+  },
+  {
+   "kind": "cta",
+   "save": "Save this for tonight's story",
+   "source": "More off-screen games: Play at home in the LearnSum parent area"
+  }
+ ]
+}

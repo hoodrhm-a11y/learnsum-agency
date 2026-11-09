@@ -1,0 +1,87 @@
+{
+ "id": "2026-11-17-report-talk-with-tweens",
+ "type": "carousel",
+ "topic": "Talking about the progress report calmly",
+ "publish_at": "2026-11-17T19:30:00-05:00",
+ "fact_ids": [
+  "on_progress_reports"
+ ],
+ "caption": "Report came home? Stay calm and start with curiosity. 📋\n\nOlder kids can feel judged by a report before you say a word.\nA few simple swaps help them open up and help you make one small plan.\n\nWhat's the first thing you say when the report comes home?\n\n#ParentingTips #ProgressReport #MiddleSchool #CanadianParents #OntarioEducation",
+ "slides": [
+  {
+   "kind": "cover",
+   "chip": "Progress report season",
+   "title": [
+    "Report",
+    "came home?",
+    "Stay calm."
+   ],
+   "accent": 2,
+   "sub": "Instead of this, try that"
+  },
+  {
+   "kind": "points",
+   "kicker": "Before you talk",
+   "title": "Read it first, then together",
+   "mark": 1,
+   "items": [
+    [
+     "Read it on your own first",
+     "Find one thing that is going well."
+    ],
+    [
+     "Pick a calm moment",
+     "A snack at the table beats the front door."
+    ]
+   ],
+   "example": "Example: Omar's report says his writing is improving. Start right there."
+  },
+  {
+   "kind": "compare",
+   "kicker": "Instead of... try",
+   "title": "Words that open the door",
+   "left": {
+    "name": "Instead of",
+    "points": [
+     "Why is this mark low?",
+     "Your sister never...",
+     "We need to talk."
+    ]
+   },
+   "right": {
+    "name": "Try",
+    "points": [
+     "Which part felt best?",
+     "What felt tricky?",
+     "What would help?"
+    ]
+   },
+   "footer": "Curiosity keeps kids talking."
+  },
+  {
+   "kind": "points",
+   "kicker": "Next step",
+   "title": "Make one small plan",
+   "mark": 2,
+   "items": [
+    [
+     "Pick one skill",
+     "One clear goal beats a long list."
+    ],
+    [
+     "Let your child choose how",
+     "A game, some reading or a little practice?"
+    ]
+   ],
+   "example": "Example: Leo picks a little fractions practice after dinner.",
+   "note": "Ask the teacher what helps most at home."
+  },
+  {
+   "kind": "cta",
+   "save": "Save this · Send it to a parent",
+   "lines": [
+    "Ontario report and interview dates are set by each school board."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,112 @@
+{
+ "id": "2026-11-19-grade-4-explainer",
+ "type": "carousel",
+ "topic": "What your grade 4 child learns",
+ "publish_at": "2026-11-19T19:30:00-05:00",
+ "fact_ids": [
+  "ls_grades_subjects"
+ ],
+ "caption": "Wondering what grade 4 looks like? Here's the big picture, in plain words. 📚\n\nMath, reading and writing all get a little deeper this year.\nEvery school and board sets its own order, so your child's teacher has the details.\nThere's one easy thing to try at home on the last slide.\n\nWhat's your child's favourite subject this year?\n\n#ParentingTips #ElementarySchool #CanadianParents #LearningAtHome",
+ "slides": [
+  {
+   "kind": "cover",
+   "chip": "What grade 4 learns",
+   "title": [
+    "What your",
+    "grade 4 child",
+    "is learning"
+   ],
+   "accent": 1,
+   "sub": "The big ideas, in plain words"
+  },
+  {
+   "kind": "points",
+   "kicker": "Math",
+   "title": "Numbers get bigger and smarter",
+   "mark": 1,
+   "items": [
+    [
+     "Multiplication and division",
+     "They are linked. Think equal groups and fair sharing."
+    ],
+    [
+     "Fractions",
+     "Equal parts of a whole, like pizza slices."
+    ],
+    [
+     "Bigger numbers",
+     "Place value: what each digit is worth."
+    ]
+   ],
+   "example": "Example: Maya cuts a pizza into 8 equal slices and eats 3. That's 3 out of 8."
+  },
+  {
+   "kind": "points",
+   "kicker": "Reading",
+   "title": "Reading for meaning",
+   "mark": 2,
+   "items": [
+    [
+     "Main idea",
+     "What is this mostly about? Which details prove it?"
+    ],
+    [
+     "Reading between the lines",
+     "What the author hints at but doesn't say."
+    ],
+    [
+     "Longer books",
+     "Chapter books, facts and stories."
+    ]
+   ],
+   "example": "Example: \"Why do you think Leo looked away?\" is a great question for any story."
+  },
+  {
+   "kind": "points",
+   "kicker": "Writing and language",
+   "title": "Writing gets organised",
+   "mark": 3,
+   "items": [
+    [
+     "Paragraphs",
+     "An opening line, a few details, a closing line."
+    ],
+    [
+     "Checking their work",
+     "Capitals, punctuation and spelling."
+    ],
+    [
+     "Opinions with reasons",
+     "\"I think... because...\""
+    ]
+   ]
+  },
+  {
+   "kind": "points",
+   "kicker": "Try this tonight",
+   "title": "Tiny ways to help at home",
+   "mark": 4,
+   "items": [
+    [
+     "Share a snack",
+     "Ask: how can we split this equally?"
+    ],
+    [
+     "Read a page, then ask why",
+     "Why did the character do that?"
+    ],
+    [
+     "Two-sentence opinion",
+     "Favourite dinner? Say it and give a reason."
+    ]
+   ]
+  },
+  {
+   "kind": "cta",
+   "save": "Save this · Send it to a parent",
+   "lines": [
+    "Skills and order vary by school and board. Your child's teacher knows best."
+   ]
+  }
+ ]
+}

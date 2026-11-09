@@ -1,0 +1,93 @@
+{
+ "id": "2026-11-21-math-person-myth",
+ "type": "carousel",
+ "topic": "Myth: some kids aren't math people",
+ "publish_at": "2026-11-21T19:30:00-05:00",
+ "fact_ids": [
+  "ls_mastery"
+ ],
+ "caption": "\"I'm just not a math person.\" Heard it at your house? 💬\n\nThis is common in the middle school years, when math gets harder.\nSkills grow with practice, and mistakes show what to practise next.\nSwipe for three phrases to try instead.\n\nWhat's a phrase that helps in your house when something feels hard?\n\n#ParentingTips #MiddleSchool #GrowthMindset #CanadianParents #LearningAtHome",
+ "slides": [
+  {
+   "kind": "cover",
+   "chip": "Myth vs fact · Middle school",
+   "title": [
+    "\"I'm not a",
+    "math person.\"",
+    "Is it true?"
+   ],
+   "accent": 1,
+   "sub": "What to say at home instead"
+  },
+  {
+   "kind": "compare",
+   "kicker": "Myth vs fact",
+   "title": "Skills grow with practice",
+   "left": {
+    "name": "Myth",
+    "points": [
+     "Some kids are born good at math",
+     "Fast answers mean smart",
+     "A mistake means it's too hard"
+    ]
+   },
+   "right": {
+    "name": "Fact",
+    "points": [
+     "Skills grow with practice",
+     "Careful thinking beats speed",
+     "A mistake shows what to practise"
+    ]
+   },
+   "footer": "Every child learns at their own pace."
+  },
+  {
+   "kind": "points",
+   "kicker": "Say this instead",
+   "title": "Small words, big shift",
+   "mark": 1,
+   "items": [
+    [
+     "\"I can't do it.\"",
+     "Try: \"I can't do it yet.\""
+    ],
+    [
+     "\"This is too hard.\"",
+     "Try: \"Which part makes sense so far?\""
+    ],
+    [
+     "\"I got it wrong.\"",
+     "Try: \"What can this mistake teach us?\""
+    ]
+   ],
+   "example": "Example: Omar says algebra is too hard. Ask which step felt okay, then start from there."
+  },
+  {
+   "kind": "points",
+   "kicker": "Try this tonight",
+   "title": "Make mistakes normal",
+   "mark": 2,
+   "items": [
+    [
+     "Share your own mistake",
+     "Tell a time you got it wrong and fixed it."
+    ],
+    [
+     "Pick one problem",
+     "Work through it together, out loud."
+    ],
+    [
+     "Praise the effort",
+     "Name the strategy they tried."
+    ]
+   ]
+  },
+  {
+   "kind": "cta",
+   "save": "Save this · Send it to a parent",
+   "lines": [
+    "General learning advice. Every child learns at their own pace."
+   ]
+  }
+ ]
+}
