@@ -1,0 +1,54 @@
+name: Safety net (auto-approve a waiting week)
+
+# If the weekly reviewer hasn't approved next week's posts by Saturday evening, check them again and
+# merge, so posting never stops. Posts that fail the safety checks are removed first; if none pass,
+# nothing is merged and an issue is opened instead.
+on:
+  schedule:
+    - cron: "11 23 * * 6"   # Saturdays ~6-7 pm Toronto
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  approve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Waiting week?
+        id: pr
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          N=$(gh api "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=50" -q '[.[]|select(.head.ref|startswith("week-"))]|sort_by(.created_at)|last|.number // empty')
+          B=$(gh api "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=50" -q '[.[]|select(.head.ref|startswith("week-"))]|sort_by(.created_at)|last|.head.ref // empty')
+          echo "n=$N" >> "$GITHUB_OUTPUT"; echo "branch=$B" >> "$GITHUB_OUTPUT"
+          [ -n "$N" ] && echo "Week waiting: #$N ($B)" || echo "Nothing waiting."
+      - uses: actions/checkout@v4
+        if: steps.pr.outputs.n != ''
+        with: { ref: "${{ steps.pr.outputs.branch }}" }
+      - uses: actions/setup-python@v5
+        if: steps.pr.outputs.n != ''
+        with: { python-version: "3.12" }
+      - name: Re-check every post, drop any that fail
+        if: steps.pr.outputs.n != ''
+        run: |
+          pip install -q pyyaml
+          git config user.name "learnsum-bot"; git config user.email "actions@users.noreply.github.com"
+          for f in queue/approved/*.json; do
+            python3 -m agent.validate "$f" | grep -q " OK$" || { echo "dropping $f"; git rm -q "$f"; }
+          done
+          git diff --cached --quiet || { git commit -m "Safety net: drop posts that failed checks"; git push; }
+          ls queue/approved/*.json >/dev/null 2>&1 || { echo "no posts left"; exit 1; }
+      - name: Approve
+        if: steps.pr.outputs.n != ''
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          gh api -X PUT "repos/$GITHUB_REPOSITORY/pulls/${{ steps.pr.outputs.n }}/merge" -f merge_method=merge \
+            -f commit_title="Approve week (safety net, reviewer did not run)"
+      - name: Alert
+        if: failure()
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: gh issue create --title "⚠️ Next week's posts could not be approved" --body "See $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
