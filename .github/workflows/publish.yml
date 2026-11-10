@@ -2,9 +2,10 @@ name: Publish due posts
 
 on:
   schedule:
-    # One post a day at 7:30 pm Toronto. Two times to cover EST (UTC-5) and EDT (UTC-4).
-    - cron: "23 23 * * *"
-    - cron: "23 0 * * *"
+    # One post a day at 7:30 pm Toronto. GitHub's timer can run late, so check every 20 minutes
+    # from about 7 pm to 11 pm Toronto (EST and EDT). Runs with nothing due finish in seconds.
+    - cron: "3,23,43 23 * * *"
+    - cron: "3,23,43 0-3 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
