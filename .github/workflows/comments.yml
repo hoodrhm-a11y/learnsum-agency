@@ -1,9 +1,10 @@
 name: Comment assistant
 
 on:
-  schedule:
-    - cron: "37 12-23/3 * * *"  # light: every 3 hours, roughly 7-8 am to 7-8 pm Toronto
-    - cron: "37 2 * * *"         # plus one late-evening check
+  # PAUSED: automatic schedule turned off. Re-enable by uncommenting below.
+  # schedule:
+  #   - cron: "37 12-23/3 * * *"  # light: every 3 hours, roughly 7-8 am to 7-8 pm Toronto
+  #   - cron: "37 2 * * *"         # plus one late-evening check
   workflow_dispatch:
 
 permissions:

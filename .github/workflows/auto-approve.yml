@@ -4,8 +4,9 @@ name: Safety net (auto-approve a waiting week)
 # merge, so posting never stops. Posts that fail the safety checks are removed first; if none pass,
 # nothing is merged and an issue is opened instead.
 on:
-  schedule:
-    - cron: "11 23 * * 6"   # Saturdays ~6-7 pm Toronto
+  # PAUSED: automatic schedule turned off. Re-enable by uncommenting below.
+  # schedule:
+  #   - cron: "11 23 * * 6"   # Saturdays ~6-7 pm Toronto
   workflow_dispatch:
 
 permissions:

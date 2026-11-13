@@ -1,8 +1,9 @@
 name: Weekly content (plan + approval PR)
 
 on:
-  schedule:
-    - cron: "29 13 * * 0"   # Sundays ~8-9 am Toronto
+  # PAUSED: automatic schedule turned off. Re-enable by uncommenting below.
+  # schedule:
+  #   - cron: "29 13 * * 0"   # Sundays ~8-9 am Toronto
   workflow_dispatch:
     inputs:
       start_date:

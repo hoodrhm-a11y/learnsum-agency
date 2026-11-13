@@ -4,8 +4,9 @@ on:
   push:
     branches: [main]
     paths: [".github/workflows/connection-check.yml", "publish/**"]
-  schedule:
-    - cron: "41 14 * * 1"   # Mondays ~9-10 am Toronto
+  # PAUSED: automatic schedule turned off. Re-enable by uncommenting below.
+  # schedule:
+  #   - cron: "41 14 * * 1"   # Mondays ~9-10 am Toronto
   workflow_dispatch:
 
 permissions:
